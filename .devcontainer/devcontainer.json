@@ -10,9 +10,6 @@
     "XLA_FLAGS": "--xla_gpu_cuda_data_dir=/usr/local/cuda"
   },
   "updateContentCommand": "bash .devcontainer/install-dev-tools.sh",
-  "postCreateCommand": [
-    "nvidia-smi"
-  ],
   "customizations": {
     "vscode": {
       "extensions": [
