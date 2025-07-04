@@ -23,9 +23,10 @@ apt-get update
 apt-get install libcudnn8=8.9.7.*-1+cuda12.1 -y
 apt-get install libcudnn8-dev=8.9.7.*-1+cuda12.1 -y
 
-# install exact NVIDIA utils version to match driver (570.133.20)
+# install exact NVIDIA driver libraries to match host kernel driver 570.133.20
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/libnvidia-compute-570_570.133.20-0ubuntu1_amd64.deb
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/nvidia-utils-570_570.133.20-0ubuntu1_amd64.deb
-apt-get install -y ./nvidia-utils-570_570.133.20-0ubuntu1_amd64.deb
+dpkg -i ./libnvidia-compute-570_570.133.20-0ubuntu1_amd64.deb ./nvidia-utils-570_570.133.20-0ubuntu1_amd64.deb
 
 # install recommended packages
 apt-get install zlib1g g++ freeglut3-dev \
